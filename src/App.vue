@@ -1,25 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <product-list :products="products"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import products from '@/data/products';
+// eslint-disable-next-line import/extensions
+import productList from '@/components/ProductList';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
+  components: { productList },
+
+  data() {
+    return {
+      products,
+    };
   },
 };
 </script>
-
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
-</style>
